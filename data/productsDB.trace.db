@@ -1,0 +1,152 @@
+2018-02-20 18:59:49 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "PLAY_EVOLUTIONS" not found; SQL statement:
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%' [42102-193]
+2018-02-26 09:57:30 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: Chunk 2209 no longer exists [1.4.193/9]" [50000-193]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:94)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2518)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:2713)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: Chunk 2209 no longer exists [1.4.193/9]" [50000-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 5 more
+Caused by: java.lang.IllegalStateException: Chunk 2209 no longer exists [1.4.193/9]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.MVStore.getChunkIfFound(MVStore.java:955)
+	at org.h2.mvstore.MVStore.getChunk(MVStore.java:937)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:1945)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:736)
+	at org.h2.mvstore.MVMap.setRootPos(MVMap.java:746)
+	at org.h2.mvstore.MVStore.getMetaMap(MVStore.java:529)
+	at org.h2.mvstore.MVStore.openMapVersion(MVStore.java:410)
+	at org.h2.mvstore.MVMap.openVersion(MVMap.java:1128)
+	at org.h2.mvstore.MVMap.rewrite(MVMap.java:775)
+	at org.h2.mvstore.MVStore.compactRewrite(MVStore.java:1920)
+	at org.h2.mvstore.MVStore.compact(MVStore.java:1812)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2514)
+	... 1 more
+2018-02-26 10:04:03 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: General error: "General error: ""java.lang.IllegalStateException: Chunk 2209 no longer exists [1.4.193/9]"" [50000-193]" [50000-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.engine.Database.throwLastBackgroundException(Database.java:2030)
+	at org.h2.engine.Database.close(Database.java:1220)
+	at org.h2.engine.Database.removeSession(Database.java:1176)
+	at org.h2.engine.Session.close(Session.java:826)
+	at org.h2.jdbc.JdbcConnection.close(JdbcConnection.java:394)
+	at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:142)
+	at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:433)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.message.DbException: General error: "java.lang.IllegalStateException: Chunk 2209 no longer exists [1.4.193/9]" [50000-193]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:94)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2518)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:2713)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: Chunk 2209 no longer exists [1.4.193/9]" [50000-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 5 more
+Caused by: java.lang.IllegalStateException: Chunk 2209 no longer exists [1.4.193/9]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.MVStore.getChunkIfFound(MVStore.java:955)
+	at org.h2.mvstore.MVStore.getChunk(MVStore.java:937)
+	at org.h2.mvstore.MVStore.readPage(MVStore.java:1945)
+	at org.h2.mvstore.MVMap.readPage(MVMap.java:736)
+	at org.h2.mvstore.MVMap.setRootPos(MVMap.java:746)
+	at org.h2.mvstore.MVStore.getMetaMap(MVStore.java:529)
+	at org.h2.mvstore.MVStore.openMapVersion(MVStore.java:410)
+	at org.h2.mvstore.MVMap.openVersion(MVMap.java:1128)
+	at org.h2.mvstore.MVMap.rewrite(MVMap.java:775)
+	at org.h2.mvstore.MVStore.compactRewrite(MVStore.java:1920)
+	at org.h2.mvstore.MVStore.compact(MVStore.java:1812)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2514)
+	... 1 more
+2018-02-26 10:04:03 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: Reading from nio:/media/sf_student/lab1/data/productsDB.mv.db failed; file length 151552 read length 1024 at 208896 [1.4.193/1]" [50000-193]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:94)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2518)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:2713)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: Reading from nio:/media/sf_student/lab1/data/productsDB.mv.db failed; file length 151552 read length 1024 at 208896 [1.4.193/1]" [50000-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 5 more
+Caused by: java.lang.IllegalStateException: Reading from nio:/media/sf_student/lab1/data/productsDB.mv.db failed; file length 151552 read length 1024 at 208896 [1.4.193/1]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:435)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.MVStore.readChunkHeader(MVStore.java:1584)
+	at org.h2.mvstore.MVStore.getMetaMap(MVStore.java:527)
+	at org.h2.mvstore.MVStore.openMapVersion(MVStore.java:410)
+	at org.h2.mvstore.MVMap.openVersion(MVMap.java:1128)
+	at org.h2.mvstore.MVMap.rewrite(MVMap.java:775)
+	at org.h2.mvstore.MVStore.compactRewrite(MVStore.java:1920)
+	at org.h2.mvstore.MVStore.compact(MVStore.java:1812)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2514)
+	... 1 more
+Caused by: java.io.EOFException
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:423)
+	... 10 more
+2018-02-26 10:22:06 database: could not close the database
+org.h2.message.DbException: General error: "General error: ""java.lang.IllegalStateException: Reading from nio:/media/sf_student/lab1/data/productsDB.mv.db failed; file length 151552 read length 1024 at 208896 [1.4.193/1]"" [50000-193]" [50000-193]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.engine.Database.throwLastBackgroundException(Database.java:2030)
+	at org.h2.engine.Database.close(Database.java:1220)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:63)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "General error: ""java.lang.IllegalStateException: Reading from nio:/media/sf_student/lab1/data/productsDB.mv.db failed; file length 151552 read length 1024 at 208896 [1.4.193/1]"" [50000-193]" [50000-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 4 more
+Caused by: org.h2.message.DbException: General error: "java.lang.IllegalStateException: Reading from nio:/media/sf_student/lab1/data/productsDB.mv.db failed; file length 151552 read length 1024 at 208896 [1.4.193/1]" [50000-193]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:94)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2518)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:2713)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: Reading from nio:/media/sf_student/lab1/data/productsDB.mv.db failed; file length 151552 read length 1024 at 208896 [1.4.193/1]" [50000-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 5 more
+Caused by: java.lang.IllegalStateException: Reading from nio:/media/sf_student/lab1/data/productsDB.mv.db failed; file length 151552 read length 1024 at 208896 [1.4.193/1]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:435)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.MVStore.readChunkHeader(MVStore.java:1584)
+	at org.h2.mvstore.MVStore.getMetaMap(MVStore.java:527)
+	at org.h2.mvstore.MVStore.openMapVersion(MVStore.java:410)
+	at org.h2.mvstore.MVMap.openVersion(MVMap.java:1128)
+	at org.h2.mvstore.MVMap.rewrite(MVMap.java:775)
+	at org.h2.mvstore.MVStore.compactRewrite(MVStore.java:1920)
+	at org.h2.mvstore.MVStore.compact(MVStore.java:1812)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2514)
+	... 1 more
+Caused by: java.io.EOFException
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:423)
+	... 10 more
+2018-02-26 10:22:06 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: Reading from nio:/media/sf_student/lab1/data/productsDB.mv.db failed; file length 61440 read length 1024 at 208896 [1.4.193/1]" [50000-193]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:94)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2518)
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:2713)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: Reading from nio:/media/sf_student/lab1/data/productsDB.mv.db failed; file length 61440 read length 1024 at 208896 [1.4.193/1]" [50000-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 5 more
+Caused by: java.lang.IllegalStateException: Reading from nio:/media/sf_student/lab1/data/productsDB.mv.db failed; file length 61440 read length 1024 at 208896 [1.4.193/1]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:435)
+	at org.h2.mvstore.FileStore.readFully(FileStore.java:98)
+	at org.h2.mvstore.MVStore.readChunkHeader(MVStore.java:1584)
+	at org.h2.mvstore.MVStore.getMetaMap(MVStore.java:527)
+	at org.h2.mvstore.MVStore.openMapVersion(MVStore.java:410)
+	at org.h2.mvstore.MVMap.openVersion(MVMap.java:1128)
+	at org.h2.mvstore.MVMap.rewrite(MVMap.java:775)
+	at org.h2.mvstore.MVStore.compactRewrite(MVStore.java:1920)
+	at org.h2.mvstore.MVStore.compact(MVStore.java:1812)
+	at org.h2.mvstore.MVStore.writeInBackground(MVStore.java:2514)
+	... 1 more
+Caused by: java.io.EOFException
+	at org.h2.mvstore.DataUtils.readFully(DataUtils.java:423)
+	... 10 more
